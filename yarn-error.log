@@ -1,0 +1,51 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-11.0.17.8-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\ProgramData\nvm;C:\Program Files\nodejs;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Yarn\bin\;C:\Android\Sdk;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\GitHub CLI\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Users\rodrigo.mendonca\AppData\Local\pnpm;C:\Users\rodrigo.mendonca\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\rodrigo.mendonca\AppData\Local\Programs\Python\Python311\;C:\Users\rodrigo.mendonca\AppData\Local\Microsoft\WindowsApps;C:\Users\rodrigo.mendonca\AppData\Roaming\npm;C:\Users\rodrigo.mendonca\AppData\Local\Yarn\bin;C:\Users\rodrigo.mendonca\AppData\Local\Programs\Microsoft VS Code\bin;C:\Python27;C:\Users\rodrigo.mendonca\.dotnet\tools;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EBUSY: resource busy or locked, rmdir 'C:\Users\rodrigo.mendonca\projetos\personal\whatsapp_bot\node_modules\whatsapp-web.js\node_modules\puppeteer\.local-chromium\win64-982053\chrome-win'
+
+npm manifest: 
+  {
+    "name": "whatsapp_bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "nodemon watch src/index.js",
+      "format": "npm run lint && npm run prettier",
+      "prettier": "prettier --ignore-path .eslintignore --write .",
+      "lint": "eslint --ignore-path .eslintignore --fix --ext .ts,.tsx,.js,.jsx ."
+    },
+    "keywords": [],
+    "author": "Rodrigo Cordeiro <rodrigomendoncca@gmail.com> (https://rodcordeiro.com.br/)",
+    "license": "MIT",
+    "dependencies": {
+      "axios": "^1.3.5",
+      "puppeteer": "^19.9.1",
+      "qrcode": "^1.5.1",
+      "whatsapp-web.js": "^1.19.5"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.22",
+      "eslint": "^8.38.0",
+      "prettier": "^2.8.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
