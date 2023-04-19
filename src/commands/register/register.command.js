@@ -1,5 +1,6 @@
 class Command {
   name = 'register';
+  
   execute = async (message, args) => {
     // const chat = await message.getChat();
     // chat.sendStateTyping();

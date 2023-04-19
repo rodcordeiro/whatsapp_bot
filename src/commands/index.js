@@ -7,7 +7,7 @@ const commandDirs = fs
   .readdirSync(commandPath)
   .filter(file => !file.endsWith('.js'));
 
-const Commands = new commandsHandler();
+const Commands = commandsHandler;
 for (const dir of commandDirs) {
   const filePath = path.join(commandPath, dir);
   try {

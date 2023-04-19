@@ -9,4 +9,4 @@ class Commands {
   }
 }
 
-module.exports.commandsHandler = Commands;
+module.exports.commandsHandler = new Commands();
