@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { config } = require('../config');
-
+const handlers = require("../handlers/music.handler")
 const api = axios.create(config.api);
 
 class Pontos {
@@ -9,16 +9,12 @@ class Pontos {
       .get('/api')
       .then(data => {
         const { linhas, pontos } = data.data;
-        return { linhas, pontos };
+        return { linhas: new handlers.Category(linhas), pontos: new handlers.Point(pontos) };
       })
       .catch(err => {
         console.error(err);
       });
   }
-  randomize(arr) {
-    const random = Math.floor(Math.random() * arr.length);
-    const randomItem = arr[random];
-    return randomItem;
-  }
+  
 }
-module.exports.Pontos = Pontos;
+module.exports.PontosService = Pontos;

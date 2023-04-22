@@ -20,7 +20,7 @@ module.exports.sendQrCode = async (code) => {
 
     await axios
       .post(
-        "https://discord.com/api/webhooks/1096546893179396096/Dtg3rf_vr-roPMGHKWU2KVZF0WszWx__UKPqbrZWZk7VG1ukU8LREvcRyXgIOK2iw7Kn",
+        process.env.DISCORD_HOOK,
         form
       )
       .then((res) => {
