@@ -12,7 +12,7 @@ class Command {
       return await message.reply(
         '```/register <key> <value>```\n\nKey options:\n*pontos*: Grupo de pontos;\n*raizes*: Grupo do raizes;',
       );
-    if (!args.length !== 2)
+    if (!args.length || args.length !== 2)
       return await message.reply(
         'Correct syntax:\n```/register <key> <value>```',
       );
