@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { commandsHandler } = require('../common/handlers/commands.handler');
 
+// eslint-disable-next-line no-undef
 const commandPath = path.join(__dirname, './');
 const commandDirs = fs
   .readdirSync(commandPath)

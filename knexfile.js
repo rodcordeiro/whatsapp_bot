@@ -1,19 +1,25 @@
 // Update with your config settings.
-
+const { config } = require('dotenv');
+config();
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
   development: {
-    client: 'sqlite3',
+    client: 'mysql',
     connection: {
-      filename: './src/database/dev.sqlite3',
+      host: process.env.DB_HOST,
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PWD,
+    },
+    pool: {
+      min: 2,
+      max: 10,
     },
     migrations: {
+      tableName: 'wweb_bot_migrations',
       directory: './src/database/migrations',
-    },
-    seeds: {
-      directory: './src/database/seeds',
     },
   },
 
@@ -29,7 +35,7 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations',
+      tableName: 'wweb_bot_migrations',
     },
   },
 
@@ -46,7 +52,8 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations',
+      tableName: 'wweb_bot_migrations',
+      directory: './src/database/migrations',
     },
   },
 };
