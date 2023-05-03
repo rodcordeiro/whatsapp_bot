@@ -17,7 +17,7 @@ class Command {
         'Correct syntax:\n```/register <key> <value>```',
       );
     const keys = ['pontos', 'raizes'];
-    if (keys.includes(!args[0])) return await message.reply('Invalid key arg');
+    if (!keys.includes(args[0])) return await message.reply('Invalid key arg');
 
     const name = args[0],
       channel_id = args[1];

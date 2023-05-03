@@ -1,6 +1,22 @@
-class Point {
+class Base {
+  constructor(arr,cb) {
+    this.data = arr.map(cb);
+  }
+  getRandom() {
+    const random = Math.floor(Math.random() * this.data.length);
+    const randomItem = this.data[random];
+    return randomItem;
+  }
+  filterByCategory(id) {
+    return this.data.filter(item => item.idLinha === id);
+  }
+}
+
+
+
+class Point extends Base {
   constructor(arr) {
-    this.data = arr.map(item => ({
+    super(arr,item => ({
       id: item.id,
       ritmo: item.ritmo,
       idLinha: item.idLinha,
@@ -11,29 +27,21 @@ class Point {
       hasAudio: item.audio_link ? true : false,
     }));
   }
-  getRandom() {
-    const random = Math.floor(Math.random() * this.data.length);
-    const randomItem = this.data[random];
-    return randomItem;
-  }
+  
   filterByLineId(id) {
     return this.data.filter(item => item.idLinha === id);
   }
 }
 
-class Category {
+class Category extends Base {
   constructor(arr) {
-    this.data = arr.map(item => ({
+    super(arr, item => ({
       id: item.id,
       linha: item.linha,
       categoria: item.categoria,
     }));
   }
-  getRandom() {
-    const random = Math.floor(Math.random() * this.data.length);
-    const randomItem = this.data[random];
-    return randomItem;
-  }
+  
   filterByCategory(id) {
     return this.data.filter(item => item.idLinha === id);
   }
