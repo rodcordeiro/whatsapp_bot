@@ -15,7 +15,7 @@ class Command {
 
     const msg = `Aqui estão as linhas:\r\n\n${linhas.data.map(linha=>`#${linha.id}: ${linha.linha}\n`)}\n\n\`\`\`Para ver os pontos de uma linha, envie /pontos id_da_linha\`\`\``
    return await message.reply(msg)
-    catch(err){
+    }  catch(err){
       console.error(err)
       await message.reply("deu ruim aqui, tenta de novo depois")
     }
