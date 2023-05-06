@@ -7,9 +7,7 @@ class Base {
     const randomItem = this.data[random];
     return randomItem;
   }
-  filterByCategory(id) {
-    return this.data.filter(item => item.idLinha === id);
-  }
+  
 }
 
 
@@ -43,7 +41,7 @@ class Category extends Base {
   }
   
   filterByCategory(id) {
-    return this.data.filter(item => item.idLinha === id);
+    return this.data.filter(item => item.categoria === id);
   }
 }
 
