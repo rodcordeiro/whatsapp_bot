@@ -19,7 +19,7 @@ class Command {
 
       const msg = `*Pontos de ${filtered[0].linha}!*\n${filtered.map(
         item =>
-          `${Templates.PONTO(item)}}\n\n-------------------------------\n`,
+          `${Templates.PONTO(item)}\n\n-------------------------------\n`,
       )}${Templates.Footer(filtered[0].linha)}`;
       return await message.reply(msg);
     } catch (error) {

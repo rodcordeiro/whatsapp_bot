@@ -11,10 +11,10 @@ class Command {
       const { linhas } = await Data.getData();
 
       const msg = `Aqui estão as linhas:\r\n\n${linhas.data
-        .map(linha => `#${linha.id}: ${linha.linha}`)
+        .map(linha => `${linha.id}: ${linha.linha}`)
         .join(
           '\n',
-        )}\n\n\`\`\`Para ver os pontos de uma linha, envie /pontos id_da_linha\`\`\``;
+        )}\n\n\`\`\`Para ver os pontos de uma linha, envie /pontos id_da_linha. Exemplo: \`\`\`_/pontos 4_\`\`\` para pontos de Logun Edé.\`\`\``;
       return await message.reply(msg);
     } catch (err) {
       console.error(err);
