@@ -16,7 +16,6 @@ const sendDailyPonto = async () => {
     .select('channel_id')
     .where({ name: 'raizes' })
     .first();
-  console.log({ destiny });
   if (destiny) {
     if (data.hasAudio) {
       const audio = await MessageMedia.fromUrl(data.audioLink);
