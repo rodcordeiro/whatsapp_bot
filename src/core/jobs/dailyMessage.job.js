@@ -5,7 +5,7 @@ const { connection } = require('../../database');
 const { PontosService } = require('../../common/utils/pontos.util');
 const { Templates } = require('../../common/handlers/templates.handler');
 
-const DAILY_CRON = '* 9 * * *';
+const DAILY_CRON = '0 9 * * *';
 
 const sendDailyPonto = async () => {
   const Pontos = new PontosService();
