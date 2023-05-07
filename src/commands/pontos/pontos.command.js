@@ -10,12 +10,12 @@ class Command {
 
     try {
        const Data = new PontosService()
-    const {linhas, pontos} = await Data.getData()
+    const { pontos} = await Data.getData()
     if(!args.length)
       return await message.reply("\tComando inválido!\nO formato correto é:\n\`\`\`/pontos id_linha\`\`\`\nPara vizualizar os ids das linhas, mande \`\`\`/categoria\`\`\`");
-    const linha =linhas.data.find(item=>item.id)
-    console.debug({linha})
-   return await message.reply("msg")
+    const da =pontos.data.find(item=>item.idLinha === args[0])
+    console.debug({da})
+   return await message.reply(JSON.JSON.stringify(da))
     
     } catch (error) {
       console.error(error)
