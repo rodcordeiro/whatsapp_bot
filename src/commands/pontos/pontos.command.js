@@ -13,9 +13,16 @@ class Command {
     try {
       const Data = new PontosService();
       const { pontos } = await Data.getData();
-      if (!args.length || args.includes('help'))
-        return await message.reply(this.help);
-      const filtered = pontos.data.filter(item => item.idLinha === args[0]);
+      if (args.includes('help')) return await message.reply(this.help);
+
+      let linha = args[0];
+      const regex = new RegExp(/(\/pontos)(\S\d{0,2})/gim);
+      if (regex.test(message.body)) {
+        const data = regex.exec(message.body);
+        console.debug('pontosCommand::regexdata', data);
+        linha = data[2];
+      }
+      const filtered = pontos.data.filter(item => item.idLinha === linha);
 
       const msg = `*Pontos de ${filtered[0].linha}!*\n${filtered
         .map(
