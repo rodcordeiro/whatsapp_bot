@@ -26,9 +26,9 @@ class Command {
 
       const msg = `*Pontos de ${filtered[0].linha}!*\n${filtered
         .map(
-          item => `\n${Templates.PONTO(item)}-------------------------------`,
+          item => `\n${Templates.PONTO(item)}`,
         )
-        .join('\n')}${Templates.Footer(filtered[0].linha)}`;
+        .join('-------------------------------\n')}\n${Templates.Footer(filtered[0].linha)}`;
       return await message.reply(msg);
     } catch (error) {
       console.error(error);
