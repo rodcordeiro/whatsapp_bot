@@ -37,7 +37,7 @@ schedule(
   },
   {
     name: 'daily',
-    runOnInit: true,
+    runOnInit: false,
     timezone: 'America/Sao_Paulo',
     scheduled: true,
   },

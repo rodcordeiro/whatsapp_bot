@@ -6,9 +6,12 @@ class Command {
     chat.sendStateTyping();
 
     const text = commandsHandler.commandsList
-      .map(command => `/${command.name}`)
+      .filter(command => command.help !== undefined)
+      .map(command => `*/${command.name}* -> ${command.description || ''}`)
       .join('\n');
-    await message.reply(`Here are some commands:\n\n${text}`);
+    await message.reply(
+      `Aqui estão os comandos que atendo hoje:\n${text}\n Para ver Mais informações sobre algum comando, basta executar o comando enviando \`\`\`help\`\`\` junto. Exemplo: /pontos help.`,
+    );
     return;
   };
 }
