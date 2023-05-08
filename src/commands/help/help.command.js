@@ -7,7 +7,7 @@ class Command {
 
     const text = commandsHandler.commandsList
       .filter(command => command.help !== undefined)
-      .map(command => `*/${command.name}* -> ${command.description || ''}`)
+      .map(command => `*/${command.name}*`)
       .join('\n');
     await message.reply(
       `Aqui estão os comandos que atendo hoje:\n${text}\n Para ver Mais informações sobre algum comando, basta executar o comando enviando \`\`\`help\`\`\` junto. Exemplo: /pontos help.`,
