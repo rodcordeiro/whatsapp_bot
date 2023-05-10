@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // Update with your config settings.
 const { config } = require('dotenv');
 config();

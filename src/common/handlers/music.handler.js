@@ -1,5 +1,5 @@
 class Base {
-  constructor(arr,cb) {
+  constructor(arr, cb) {
     this.data = arr.map(cb);
   }
   getRandom() {
@@ -7,14 +7,11 @@ class Base {
     const randomItem = this.data[random];
     return randomItem;
   }
-  
 }
-
-
 
 class Point extends Base {
   constructor(arr) {
-    super(arr,item => ({
+    super(arr, item => ({
       id: item.id,
       ritmo: item.ritmo,
       idLinha: item.idLinha,
@@ -25,7 +22,7 @@ class Point extends Base {
       hasAudio: item.audio_link ? true : false,
     }));
   }
-  
+
   filterByLineId(id) {
     return this.data.filter(item => item.idLinha === id);
   }
@@ -39,7 +36,7 @@ class Category extends Base {
       categoria: item.categoria,
     }));
   }
-  
+
   filterByCategory(id) {
     return this.data.filter(item => item.categoria === id);
   }

@@ -1,1 +1,1 @@
-require("./dailyMessage.job")
+require('./dailyMessage.job');

@@ -25,10 +25,10 @@ class Command {
       const filtered = pontos.data.filter(item => item.idLinha === linha);
 
       const msg = `*Pontos de ${filtered[0].linha}!*\n${filtered
-        .map(
-          item => `\n${Templates.PONTO(item)}-------------------------------`,
-        )
-        .join('\n')}${Templates.Footer(filtered[0].linha)}`;
+        .map(item => `\n${Templates.PONTO(item)}`)
+        .join('-------------------------------\n')}\n${Templates.Footer(
+        filtered[0].linha,
+      )}`;
       return await message.reply(msg);
     } catch (error) {
       console.error(error);
